@@ -4,11 +4,8 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author ajun
- * Date 2021/7/12
- * @version 1.0
- * 自定义线程工厂
- * 模仿 DefaultFactory
+ * @author
+ * implements threadFactory
  */
 public class MyThreadFactory implements ThreadFactory {
     private static final AtomicInteger poolNumber = new AtomicInteger(1);
@@ -22,7 +19,7 @@ public class MyThreadFactory implements ThreadFactory {
                 Thread.currentThread().getThreadGroup();
         namePrefix = poolName + "-" +
                 poolNumber.getAndIncrement() +
-                "-线程-";
+                "-thread-";
     }
 
     public Thread newThread(Runnable r) {
