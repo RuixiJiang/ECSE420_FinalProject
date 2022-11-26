@@ -7,10 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * @author ajun
- * Date 2021/7/16
+ * @author
  * @version 1.0
- * 播放音乐
+ * play audio
  */
 public class PlayAudio implements Runnable {
 
@@ -22,7 +21,7 @@ public class PlayAudio implements Runnable {
 
     @Override
     public void run() {
-        // 从项目资源目录下加载背景音乐
+
         InputStream is = this.getClass().getResourceAsStream("/res/audio/" + filename);
         AudioInputStream audioInputStream = null;
         try {
@@ -46,7 +45,6 @@ public class PlayAudio implements Runnable {
 
         auline.start();
         int nBytesRead = 0;
-        //缓存
         byte[] abData = new byte[512];
 
         try {
